@@ -23,3 +23,11 @@ Dataclass is my way to go when you have to gather some data into a single object
 
 Sometimes we call this type of objects "data transfer objects" or DTOs, because they are used to transfer data between
 different parts of the system, and they don't have any logic.
+
+# Open source
+
+We use dacite a lot in our projects, so we decided to contribute to this project as a company. We found a time between
+our sprints and we fixed a few bugs and we also improved the performance of this library. It was a win-win
+situation, because we improved performance of our own system a lot and we gave something back to the community.
+What's more, we described our experience in a blog post and I hope it was nice marketing for FLYR. I think it's 
+very good to show that you are not only using open source, but you are also contributing to it.
