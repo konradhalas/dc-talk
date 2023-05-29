@@ -24,6 +24,7 @@ print(filters)
 # print(filters.origin)
 
 # 3 - default value
+# print(filters.carriers)
 
 # 4 - frozen
 # filters.origin = "JFK"

@@ -51,4 +51,4 @@ result = FlightSearchResults(
     ],
 )
 
-
+# result = FlightSearchResults(**RESPONSE_DATA)

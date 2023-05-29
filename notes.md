@@ -24,6 +24,16 @@ Dataclass is my way to go when you have to gather some data into a single object
 Sometimes we call this type of objects "data transfer objects" or DTOs, because they are used to transfer data between
 different parts of the system, and they don't have any logic.
 
+## Example 8 
+
+Dacite works with
+
+- collections
+- optional fields
+- unions
+
+It also checks types.
+
 # Open source
 
 We use dacite a lot in our projects, so we decided to contribute to this project as a company. We found a time between
