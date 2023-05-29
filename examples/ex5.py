@@ -1,6 +1,6 @@
 import requests
 
-from talk.ex3 import FlightsAPIFilters
+from examples.ex3 import FlightsAPIFilters
 
 
 def get_flights(filters: FlightsAPIFilters) -> dict:
