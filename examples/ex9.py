@@ -1,14 +1,40 @@
-from dataclasses import asdict
+from dataclasses import dataclass
+from typing import Literal
 
 import dacite
-import requests
 
-from examples.ex3 import FlightsAPIFilters
-from examples.ex6 import FlightSearchResults
+DATA = {
+    # origin, destination, departure...
+    "ancillaries": [
+        {
+            "type": "INTERNET",
+            "network_speed": "512KB",
+        },
+        {
+            "type": "INSURANCE",
+            "amount": 1000,
+        },
+    ]
+}
 
 
-def get_flights(filters: FlightsAPIFilters) -> FlightSearchResults:
-    if filters.currency and filters.currency not in ["USD", "PLN"]:
-        raise ValueError("Currency not supported")
-    response = requests.get("https://api.airline.com/flights", params=asdict(filters))
-    return dacite.from_dict(data_class=FlightSearchResults, data=response.json())
+@dataclass
+class InternetAncillary:
+    type: Literal["INTERNET"]
+    network_speed: str
+
+
+@dataclass
+class InsuranceAncillary:
+    type: Literal["INSURANCE"]
+    amount: int
+
+
+@dataclass
+class Flight:
+    ancillaries: list[InternetAncillary | InsuranceAncillary]
+
+
+result = dacite.from_dict(data_class=Flight, data=DATA)
+
+print(result)
