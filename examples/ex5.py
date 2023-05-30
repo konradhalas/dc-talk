@@ -1,3 +1,5 @@
+from dataclasses import asdict
+
 import requests
 
 from examples.ex3 import FlightsAPIFilters
@@ -6,5 +8,5 @@ from examples.ex3 import FlightsAPIFilters
 def get_flights(filters: FlightsAPIFilters) -> dict:
     if filters.currency and filters.currency not in ["USD", "PLN"]:
         raise ValueError("Currency not supported")
-    response = requests.get("https://api.airline.com/flights", params=filters)
+    response = requests.get("https://api.airline.com/flights", params=asdict(filters))
     return response.json()

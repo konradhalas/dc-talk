@@ -8,6 +8,7 @@ class Currency:
     def __post_init__(self):
         if len(self.code) != 3:
             raise ValueError("Currency code must be 3 characters long")
+        self.code = self.code.upper()
 
 
 print(Currency("USD"))
